@@ -1,2 +1,4 @@
 # ignore text files
 *.txt
+*.vocab
+*.feat
