@@ -69,7 +69,7 @@ def plot_vectors(words, model, estimator=TSNE, **kwargs):
 
 
 def make_embedding_layer(model, tokenizer, MAX_SEQUENCE_LENGTH):  # NOQA: N803
-    word_index = tokenizer.word_index
+    word_index = tokenizer.word_index               # This is a dictionary
     if isinstance(model, Word2Vec):
         wv = model.wv
     elif isinstance(model, KeyedVectors):
@@ -77,7 +77,7 @@ def make_embedding_layer(model, tokenizer, MAX_SEQUENCE_LENGTH):  # NOQA: N803
     embedding_matrix = np.zeros((len(word_index) + 1, wv.vector_size))
     for word, i in word_index.items():
         try:
-            vector = wv.get_vector(word, False)
+            vector = wv.get_vector(word, False)     
             embedding_matrix[i] = vector
         except KeyError:
             continue
