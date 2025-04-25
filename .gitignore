@@ -7,3 +7,8 @@ README
 
 # ignore directories
 aclImdb*
+
+# ignore zip files
+*.zip
+*.tar.gz
+*.tar
